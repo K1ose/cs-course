@@ -4,7 +4,7 @@ Spring 2023, Instructors: John DeNero, Hany Farid
 
 -- Berkeley University of California
 
-https://cs61a.org/
+website: https://cs61a.org/
 
 textbook: http://composingprograms.com/
 
