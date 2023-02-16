@@ -25,7 +25,7 @@ len(words)
 {w[0] for w in words}           # ‘{}’的集合形式会去除重复项，得到每个单词的头一个字符的去重集合
 
 # Data
-'draw'[::-1]                    # 倒叙
+'draw'[::-1]                    # 倒序
 {w for w in words if w == w[::-1] and len(w)>4}     # 如果单词的长度大于4且为回文单词，添加到集合中
 {w for w in words if w[::-1] in words and len(w) == 4}  # 如果单词的长度等于4且其逆序形式的单词也在集合中，添加到集合中
 {w for w in words if w[::-1] in words and len(w) > 6}   # 如果单词的长度等于6且其逆序形式的单词也在集合中，添加到集合中
