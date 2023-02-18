@@ -66,6 +66,13 @@ def pingpong(n):
     True
     """
     "*** YOUR CODE HERE ***"
+    res = 0
+    flag = True
+    for i in range(1,n+1):
+        if i % 8 == 0 or num_eights(n)>0:
+
+
+
 
 def next_larger_coin(coin):
     """Returns the next larger coin in order.
