@@ -25,7 +25,12 @@ def num_eights(n):
     True
     """
     "*** YOUR CODE HERE ***"
-
+    if n == 0:
+        return 0
+    if n % 10 == 8:
+        return 1 + num_eights(n//10)
+    else:
+        return num_eights(n//10)
 
 def pingpong(n):
     """Return the nth element of the ping-pong sequence.
@@ -61,7 +66,6 @@ def pingpong(n):
     True
     """
     "*** YOUR CODE HERE ***"
-
 
 def next_larger_coin(coin):
     """Returns the next larger coin in order.
