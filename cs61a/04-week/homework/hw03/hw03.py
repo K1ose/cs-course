@@ -67,10 +67,10 @@ def pingpong(n):
     """
     "*** YOUR CODE HERE ***"
     res = 0
-    flag = True
+    isflag = True
     for i in range(1,n+1):
         if i % 8 == 0 or num_eights(n)>0:
-
+            flag = False
 
 
 
