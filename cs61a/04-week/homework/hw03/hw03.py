@@ -66,11 +66,34 @@ def pingpong(n):
     True
     """
     "*** YOUR CODE HERE ***"
+
+    """ 
+    # should not contain '='
     res = 0
-    isflag = True
-    for i in range(1,n+1):
-        if i % 8 == 0 or num_eights(n)>0:
-            flag = False
+    val = 1
+    for i in range(1, n+1):
+        res = val + res
+        # print(res)
+        if i % 8 == 0 or num_eights(i)>0:
+            val = -val
+    return res 
+    """
+
+    def direction(n):
+        if n < 8:
+            return 1
+        
+        elif (n-1) % 8 == 0 or num_eights(n-1)>0:
+            # print(n)
+            return (-1) * direction(n-1)
+        # print(n)
+        return direction(n-1)
+    if n < 8:
+        return n
+    else:
+        return pingpong(n-1) + direction(n)
+
+
 
 
 
@@ -128,3 +151,14 @@ def count_coins(change):
     True
     """
     "*** YOUR CODE HERE ***"
+    def get_coin(coin_value, my_change):
+        if coin_value is None:
+            return 0
+        if coin_value == my_change:         # 1 coin for change
+            return 1
+        if coin_value > my_change:          # coin_value is too large to change
+            return 0
+        switch_coin = get_coin(next_larger_coin(coin_value), my_change)
+        pick_coin = get_coin(coin_value, my_change-coin_value)  # select a coin
+        return pick_coin+switch_coin
+    return get_coin(1, change)
