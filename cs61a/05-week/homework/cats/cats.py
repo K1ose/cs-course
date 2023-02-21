@@ -33,7 +33,10 @@ def pick(paragraphs, select, k):
     for p in paragraphs:
         if select(p):
             new_paragraphs += [p]
-    return new_paragraphs[k]
+    if k <= len(new_paragraphs)-1:
+        return new_paragraphs[k]
+    else:
+        return []
     # END PROBLEM 1
 
 
@@ -53,10 +56,14 @@ def about(subject):
     assert all([lower(x) == x for x in subject]), 'subjects should be lowercase.'
     # BEGIN PROBLEM 2
     "*** YOUR CODE HERE ***"
-    # TODO
+    def select(p):
+        for sub in subject:
+            if sub in lower(p):
+                return True
+        return False
+    return lambda p: select(p)
     # END PROBLEM 2
-
-
+    
 def accuracy(typed, source):
     """Return the accuracy (percentage of words typed correctly) of TYPED
     when compared to the prefix of SOURCE that was typed.
